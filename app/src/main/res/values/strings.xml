@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MVC_MVP_EXAMPLE</string>
+    <string name="total_donaciones">Total donaciones : %1$s</string>
+    <string name="ingrese">Ingrese una nueva Donacíón</string>
+    <string name="nueva">Nueva Donación</string>
+    <string name="Donar">Hacer Donación</string>
+
+    <string name="total">Total:</string>
+
+
+</resources>
