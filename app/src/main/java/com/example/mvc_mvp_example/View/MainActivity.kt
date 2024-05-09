@@ -30,11 +30,17 @@ class MainActivity : AppCompatActivity(),IviewPresenter{
     }
 
     private fun makeDonation() {
-        presenter.saveDonation(binding.tvDonation.toString())
-        presenter.totalDonation()
-        presenter.checkTotal()
+        val donationText = binding.tvDonation.text.toString()
+        if (donationText.isNotEmpty()) {
+            presenter.saveDonation(donationText)
+            binding.tvDonation.setText("")
+            presenter.totalDonation()
+            presenter.checkTotal()
+        } else {
+            // Manejar caso de donación vacía
+            displayErrorMessage()
+        }
     }
-
     override fun updateTotalDonation(totalAmount: Int) {
        val total = getString(R.string.total_donaciones, totalAmount.toString())
         binding.tvTotal.text = total
